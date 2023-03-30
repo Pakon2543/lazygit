@@ -7,7 +7,7 @@ WORKDIR /go/src/github.com/jesseduffield/lazygit/
 COPY ./ .
 RUN CGO_ENABLED=0 GOOS=linux go build
 
-FROM alpine:3.11
+FROM alpine:3.14
 RUN apk add -U git xdg-utils
 WORKDIR /go/src/github.com/jesseduffield/lazygit/
 COPY --from=0 /go/src/github.com/jesseduffield/lazygit /go/src/github.com/jesseduffield/lazygit
